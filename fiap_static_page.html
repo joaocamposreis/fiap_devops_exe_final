@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega FIAP - DevOps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="pulse">ENTREGA FIAP</h1>
+        <p class="subtitle">Pipeline DevOps com GitHub Actions</p>
+        
+        <div class="badges">
+            <span class="badge">✅ Build</span>
+            <span class="badge">🚀 Deploy</span>
+            <span class="badge">☁️ AWS S3</span>
+        </div>
+        
+        <div class="footer">
+            <p>Deployed via GitHub Actions</p>
+            <p>Static Site Hosting - Amazon S3</p>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona um pequeno efeito interativo
+        document.addEventListener('DOMContentLoaded', function() {
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach((badge, index) => {
+                setTimeout(() => {
+                    badge.style.opacity = '0';
+                    badge.style.transform = 'translateY(20px)';
+                    badge.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        badge.style.opacity = '1';
+                        badge.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
